@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "inertia-rails": {
+      "command": "ruby",
+      "args": ["./mcp/server.rb"],
+      "env": {
+        "INERTIA_RAILS_PATH": "."
+      }
+    }
+  }
+}
