@@ -1,0 +1,30 @@
+{
+  "name": "@anjolovic/inertia-rails-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for inertia-rails providing documentation and code assistance",
+  "bin": {
+    "inertia-rails-mcp": "./bin/inertia-rails-mcp"
+  },
+  "files": [
+    "bin/",
+    "server.rb",
+    "mcp_protocol.rb",
+    "tools/",
+    "resources/",
+    "README.md"
+  ],
+  "keywords": ["mcp", "inertia", "rails", "claude", "inertia-rails", "model-context-protocol"],
+  "author": "A. Jolovic",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inertiajs/inertia-rails.git"
+  },
+  "bugs": {
+    "url": "https://github.com/inertiajs/inertia-rails/issues"
+  },
+  "homepage": "https://github.com/inertiajs/inertia-rails/tree/master/mcp"
+}

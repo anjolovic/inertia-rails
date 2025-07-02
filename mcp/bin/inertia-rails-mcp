@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+
+const { spawn } = require('child_process');
+const path = require('path');
+
+// Find Ruby executable
+const rubyCmd = process.platform === 'win32' ? 'ruby.exe' : 'ruby';
+
+// Get the gem installation path
+const serverPath = path.join(__dirname, '..', 'server.rb');
+
+// Spawn Ruby process
+const ruby = spawn(rubyCmd, [serverPath], {
+  cwd: path.dirname(serverPath),
+  env: {
+    ...process.env,
+    INERTIA_RAILS_PATH: path.join(__dirname, '..')
+  },
+  stdio: 'inherit'
+});
+
+ruby.on('error', (err) => {
+  console.error('Failed to start inertia-rails MCP server:', err);
+  console.error('Make sure Ruby is installed and in your PATH');
+  process.exit(1);
+});
+
+ruby.on('exit', (code) => {
+  process.exit(code || 0);
+});

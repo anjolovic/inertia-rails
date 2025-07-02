@@ -1,0 +1,7 @@
+.gitignore
+*.gem
+*.log
+.rspec
+spec/
+test/
+.mcp.json

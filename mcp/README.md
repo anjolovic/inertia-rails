@@ -18,9 +18,47 @@ And these resources:
 
 ## Installation
 
-### 1. Using Claude Desktop
+### 1. Using npm (Recommended for Claude Code)
 
-Add to your Claude Desktop configuration:
+Install the published npm package:
+
+```bash
+# Install globally
+npm install -g @anjolovic/inertia-rails-mcp
+
+# Or use directly with npx
+npx @anjolovic/inertia-rails-mcp
+```
+
+Then add to your Claude Code configuration (`~/Library/Application Support/Code/User/claude.json` on macOS):
+
+```json
+{
+  "mcpServers": {
+    "inertia-rails": {
+      "command": "npx",
+      "args": ["-y", "@anjolovic/inertia-rails-mcp@latest"]
+    }
+  }
+}
+```
+
+### 2. Using Claude Desktop
+
+For Claude Desktop, you can either use the npm package:
+
+```json
+{
+  "mcpServers": {
+    "inertia-rails": {
+      "command": "npx",
+      "args": ["@anjolovic/inertia-rails-mcp"]
+    }
+  }
+}
+```
+
+Or run directly from source:
 
 ```json
 {
@@ -36,7 +74,7 @@ Add to your Claude Desktop configuration:
 }
 ```
 
-### 2. Using Claude CLI
+### 3. Using Claude CLI
 
 The `.mcp.json` file in the project root is already configured. Just run Claude from the inertia-rails directory:
 
@@ -44,6 +82,8 @@ The `.mcp.json` file in the project root is already configured. Just run Claude 
 cd /path/to/inertia-rails
 claude --mcp-config .mcp.json
 ```
+
+**Note:** The npm package requires Ruby to be installed on your system.
 
 ## Usage Examples
 
